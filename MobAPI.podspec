@@ -7,6 +7,6 @@ s.author              = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
 s.homepage            = 'http://www.mob.com'
 s.source              = { :git => "https://github.com/MobClub/MobAPI-For-iOS.git", :tag => s.version.to_s }
 s.platform            = :ios, '6.0'
-s.vendored_frameworks = 'MobAPI/MobAPI.framework'
-s.resources           = 'MobAPI/MobAPI.bundle'
+s.vendored_frameworks = 'libraries/MobAPI.framework'
+s.resources           = 'libraries/MobAPI.bundle'
 end
