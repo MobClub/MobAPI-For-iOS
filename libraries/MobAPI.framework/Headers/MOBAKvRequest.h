@@ -8,7 +8,14 @@
 
 #import "MOBARequest.h"
 
+/**
+ *   k-v 存储相关操作
+ */
 @interface MOBAKvRequest : MOBARequest
+
+/**
+ *  @author liyc
+ */
 
 /**
  *  k-v存储
@@ -19,7 +26,7 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAKvRequest *)kvPutRequest:(NSString *)table
++ (MOBAKvRequest *) kvPutRequest:(NSString *)table
                             key:(NSString *)k
                           value:(NSString *)v;
 
@@ -31,6 +38,51 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAKvRequest *)kvGetRequest:(NSString *)table key:(NSString *)k;
++ (MOBAKvRequest *) kvGetRequest:(NSString *)table key:(NSString *)k;
+
+/**
+ *  @author ShengQiangLiu
+ */
+
+/**
+ *  查询用户表中所有数据
+ *
+ *  @param table 集合名称。必填项，不允许为nil
+ *  @param page  起始页(默认1)
+ *  @param size  返回数据条数(默认20)
+ *
+ *  @return 请求对象
+ */
++ (MOBAKvRequest *) kvGetAllDataRequestByTable:(NSString *)table
+                                          page:(NSInteger)page
+                                          size:(NSInteger)size;
+
+/**
+ *  统计用户表中数据总数
+ *
+ *  @param table 集合名称。必填项，不允许为nil
+ *
+ *  @return 请求对象
+ */
++ (MOBAKvRequest *) kvStatisticsDataCountRequestByTable:(NSString *)table;
+
+/**
+ *  删除数据表中的单条数据
+ *
+ *  @param table 集合名称。必填项，不允许为nil
+ *  @param k     数据主键。必填项，不允许为 nil
+ *
+ *  @return 请求对象
+ */
++ (MOBAKvRequest *) kvDeleteSigleDataRequestyByTable:(NSString *)table key:(NSString *)k;
+
+/**
+ *  查询用户的所有表
+ *
+ *  @return 请求对象
+ */
++ (MOBAKvRequest *) kvGetAllTablesRequest;
+
+
 
 @end

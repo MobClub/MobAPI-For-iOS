@@ -27,6 +27,7 @@
 				<string>查询天气</string>
 				<string>获取城市列表</string>
 				<string>ip查询天气</string>
+				<string>天气类型查询</string>
 			</array>
 			<array>
 				<string>身份证信息查询</string>
@@ -43,6 +44,10 @@
 			<array>
 				<string>k-v存储</string>
 				<string>k-v查询</string>
+				<string>查询用户表中所有数据</string>
+				<string>统计用户表中数据总数</string>
+				<string>删除数据表中的单条数据</string>
+				<string>查询用户的所有表</string>
 			</array>
 			<array>
 				<string>万年历</string>
@@ -116,6 +121,7 @@
 				<string>用户数据插入/更新</string>
 				<string>用户数据查询</string>
 				<string>用户数据删除项</string>
+				<string>用户密码找回[获取随机码]</string>
 			</array>
 			<array>
 				<string>现货白银数据查询</string>
@@ -136,6 +142,22 @@
 				<string>查询所有城市机场三字码信息</string>
 				<string>根据航班号查询航班信息</string>
 				<string>航线查询航班信息</string>
+			</array>
+			<array>
+				<string>科目一题库列表查询接口</string>
+				<string>科目四题库列表查询接口</string>
+				<string>专项题库分类查询</string>
+				<string>专项练习题库查询</string>
+			</array>
+			<array>
+				<string>查询所有汽车品牌</string>
+				<string>根据车系名称查询车型</string>
+				<string>查询车型详细信息</string>
+			</array>
+			<array>
+				<string>参数词典查询</string>
+				<string>查询某个轮次的比赛信息</string>
+				<string>查询队伍的比赛信息</string>
 			</array>
 		</array>
 		<key>SectionTitlesArray</key>
@@ -174,6 +196,9 @@
 			<string>词库分词相关查询</string>
 			<string>火车票相关查询</string>
 			<string>航班信息相关查询</string>
+			<string>驾考题库相关查询</string>
+			<string>汽车信息相关查询</string>
+			<string>足球5大联赛信息相关查询</string>
 		</array>
 	</dict>
 </dict>

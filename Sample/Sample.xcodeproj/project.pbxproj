@@ -10,7 +10,7 @@
 		6BBD36AC1C33D8B50083AE10 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD36AB1C33D8B50083AE10 /* MOBFoundation.framework */; };
 		845B67611CE090E500A24FE4 /* MobAPI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845B675F1CE090E500A24FE4 /* MobAPI.bundle */; };
 		845B67631CE0CC1F00A24FE4 /* MobAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845B67621CE0CC1F00A24FE4 /* MobAPI.framework */; };
-		8484AB0B1D0531D100638319 /* MobApiCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8484AB0A1D0531D100638319 /* MobApiCategory.plist */; };
+		847BAD361D3614AA005F5E57 /* MobApiCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847BAD351D3614AA005F5E57 /* MobApiCategory.plist */; };
 		84B2AC1E1CE0623B00A70DD2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2AC191CE0623B00A70DD2 /* ViewController.m */; };
 		84B2AC201CE0623B00A70DD2 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2AC1C1CE0623B00A70DD2 /* LogViewController.m */; };
 		D0A811581BD5D4C700BAA4CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A811571BD5D4C700BAA4CC /* main.m */; };
@@ -30,7 +30,7 @@
 		845B675D1CE06C1300A24FE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		845B675F1CE090E500A24FE4 /* MobAPI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobAPI.bundle; sourceTree = "<group>"; };
 		845B67621CE0CC1F00A24FE4 /* MobAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobAPI.framework; sourceTree = "<group>"; };
-		8484AB0A1D0531D100638319 /* MobApiCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MobApiCategory.plist; sourceTree = "<group>"; };
+		847BAD351D3614AA005F5E57 /* MobApiCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MobApiCategory.plist; sourceTree = "<group>"; };
 		84B2AC191CE0623B00A70DD2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84B2AC1A1CE0623B00A70DD2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		84B2AC1C1CE0623B00A70DD2 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		D0A811551BD5D4C700BAA4CC /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				8484AB0A1D0531D100638319 /* MobApiCategory.plist */,
+				847BAD351D3614AA005F5E57 /* MobApiCategory.plist */,
 				D0A811591BD5D4C700BAA4CC /* AppDelegate.h */,
 				D0A8115A1BD5D4C700BAA4CC /* AppDelegate.m */,
 				84B2AC1A1CE0623B00A70DD2 /* ViewController.h */,
@@ -184,7 +184,7 @@
 			files = (
 				845B67611CE090E500A24FE4 /* MobAPI.bundle in Resources */,
 				D0A811661BD5D4C700BAA4CC /* LaunchScreen.storyboard in Resources */,
-				8484AB0B1D0531D100638319 /* MobApiCategory.plist in Resources */,
+				847BAD361D3614AA005F5E57 /* MobApiCategory.plist in Resources */,
 				D0A811631BD5D4C700BAA4CC /* Assets.xcassets in Resources */,
 				D0A811611BD5D4C700BAA4CC /* Main.storyboard in Resources */,
 			);
@@ -245,8 +245,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -268,7 +268,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2be0f2c7-d76f-4843-a451-1c1051af215a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -291,8 +291,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -307,7 +307,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2be0f2c7-d76f-4843-a451-1c1051af215a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

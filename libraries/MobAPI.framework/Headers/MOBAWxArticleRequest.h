@@ -20,7 +20,7 @@
  *
  *  @return 请求对象
  */
-+ (MOBAWxArticleRequest *) wxarticleCategoryRequest;
++ (MOBAWxArticleRequest *) wxArticleCategoryRequest;
 
 /**
  *  微信精选列表查询
@@ -31,7 +31,7 @@
  *
  *  @return 请求对象
  */
-+ (MOBAWxArticleRequest *) wxarticleListRequestByCID:(NSString *)cid
++ (MOBAWxArticleRequest *) wxArticleListRequestByCID:(NSString *)cid
                                                 page:(NSInteger)page
                                                 size:(NSInteger)size;
 

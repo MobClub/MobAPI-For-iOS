@@ -26,7 +26,7 @@
  *  根据不同的词库分词查询
  *
  *  @param type 选择的词库类型(默认为通用词库:common)
- *  @param text 分词原文本 (base64编码处理，上限长度length为1000)，必填项，不允许为nil
+ *  @param text 分词原文本 (base64编码处理[url safe模式]，上限长度length为1024)，必填项，不允许为nil
  *
  *  @return 请求对象
  */

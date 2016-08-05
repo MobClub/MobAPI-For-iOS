@@ -131,14 +131,9 @@
     }
     else
     {
-        if ([response.responder isKindOfClass:[NSString class]])
-        {
-            logContent = response.responder;
-        }
-        else
-        {
-            logContent = [NSString stringWithFormat:@"request success!\n%@", [MOBFJson jsonStringFromObject:response.responder]];
-        }
+        
+        logContent = [NSString stringWithFormat:@"request success!\n%@", [MOBFJson jsonStringFromObject:response.responder]];
+        
         NSLog(@"%@", logContent);
     }
     
@@ -222,7 +217,7 @@
             }
             break;
         }
-        case 4:
+        case 4: // 天气查询
         {
             if (indexPath.row == 0)
             {
@@ -233,6 +228,10 @@
             }else if(indexPath.row == 2)
             {
                 [self searchWeatherByIP];
+            }
+            else if (indexPath.row ==3)
+            {
+                [self weatchTypeQueryCall];
             }
             break;
         }
@@ -276,6 +275,18 @@
             }else if (indexPath.row == 1)
             {
                 [self kvGetCall];
+            }else if (indexPath.row == 2)
+            {
+                [self kvGetAllDataQueryCall];
+            }else if (indexPath.row == 3)
+            {
+                [self kvStatisticsDataCountQueryCall];
+            }else if (indexPath.row == 4)
+            {
+                [self kvDeleteSigleDataQueryCall];
+            }else if (indexPath.row == 5)
+            {
+                [self kvGetAllTablesQueryCall];
             }
             break;
         }
@@ -322,10 +333,10 @@
             
             if (indexPath.row == 0)
             {
-                [self wxarticleCategoryQueryCall];
+                [self wxArticleCategoryQueryCall];
             }else if (indexPath.row == 1)
             {
-                [self wxarticleListQueryCall];
+                [self wxArticleListQueryCall];
             }
             break;
             
@@ -413,6 +424,10 @@
             {
                 [self userDataDeleteRequest];
             }
+            else if (indexPath.row == 9)
+            {
+                [self userPasswordRetrieveQueryCall];
+            }
             break;
         case 29: // 上海交易所白银数据相关请求
             if (indexPath.row == 0) {
@@ -462,7 +477,49 @@
                 [self flightLineQueryCall];
             }
             break;
-            
+        case 34: // 驾考题库相关查询
+            if (indexPath.row == 0) {
+                [self subjectOneListQueryCall];
+            }
+            else if (indexPath.row == 1)
+            {
+                [self subjectFourListQueryCall];
+            }
+            else if (indexPath.row == 2)
+            {
+                [self specialExamCategoryQueryCall];
+            }
+            else if (indexPath.row == 3)
+            {
+                [self specialPracticeExamQueryCall];
+            }
+            break;
+        case 35: // 汽车信息相关查询
+            if (indexPath.row == 0) {
+                [self carBrandQueryCall];
+            }
+            else if (indexPath.row == 1)
+            {
+                [self carSeriesNameQueryCall];
+            }
+            else if (indexPath.row == 2)
+            {
+                [self carSeriesDetailQueryCall];
+            }
+            break;
+        case 36: // 足球 5 大联赛信息相关查询
+            if (indexPath.row == 0) {
+                [self queryParamQueryCall];
+            }
+            else if (indexPath.row == 1)
+            {
+                [self queryMatchInfoQueryCall];
+            }
+            else if (indexPath.row == 2)
+            {
+                [self queryTeamMatchInfoQueryCall];
+            }
+            break;
         default:
             break;
     }
@@ -647,6 +704,17 @@
                }];
 }
 
+- (void)weatchTypeQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAWeatherRequest weatherTypeRequest]
+               onResult:^(MOBAResponse *response) {
+                   
+                   [self resultWithResponse:response];
+                   
+               }];
+}
 
 #pragma mark 身份证信息查询接口
 
@@ -708,7 +776,7 @@
 }
 
 
-#pragma mark k-v存储
+#pragma mark k-v 相关请求
 
 - (void)kvPutCall
 {
@@ -723,9 +791,6 @@
 }
 
 
-
-#pragma mark k-v查询调用
-
 - (void)kvGetCall
 {
     [self waitLoading:YES];
@@ -738,6 +803,53 @@
                }];
 }
 
+- (void)kvGetAllDataQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAKvRequest kvGetAllDataRequestByTable:@"mobile" page:1 size:20]
+               onResult:^(MOBAResponse *response) {
+                   
+                   [self resultWithResponse:response];
+                   
+               }];
+}
+
+- (void)kvStatisticsDataCountQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAKvRequest kvStatisticsDataCountRequestByTable:@"mobile"]
+               onResult:^(MOBAResponse *response) {
+                   
+                   [self resultWithResponse:response];
+                   
+               }];
+}
+
+- (void)kvDeleteSigleDataQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAKvRequest kvDeleteSigleDataRequestyByTable:@"mobile" key:@"bW9iaWxl"]
+               onResult:^(MOBAResponse *response) {
+                   
+                   [self resultWithResponse:response];
+                   
+               }];
+}
+
+- (void)kvGetAllTablesQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAKvRequest kvGetAllTablesRequest]
+               onResult:^(MOBAResponse *response) {
+                   
+                   [self resultWithResponse:response];
+                   
+               }];
+}
 
 #pragma mark 万年历查询
 
@@ -850,7 +962,7 @@
 {
     [self waitLoading:YES];
     
-    [MobAPI sendRequest:[MOBADreamRequest dreamRequestWithKeyword:@"鱼" page:nil size:nil]
+    [MobAPI sendRequest:[MOBADreamRequest dreamRequestWithKeyword:@"鱼" page:@"1" size:@"30"]
                onResult:^(MOBAResponse *response) {
                    
                    [self resultWithResponse:response];
@@ -937,11 +1049,11 @@
 
 #pragma mark 微信精选分类查询
 
-- (void)wxarticleCategoryQueryCall
+- (void)wxArticleCategoryQueryCall
 {
     [self waitLoading:YES];
     
-    [MobAPI sendRequest:[MOBAWxArticleRequest wxarticleCategoryRequest]
+    [MobAPI sendRequest:[MOBAWxArticleRequest wxArticleCategoryRequest]
                onResult:^(MOBAResponse *response) {
                    
                    [self resultWithResponse:response];
@@ -953,11 +1065,11 @@
 
 #pragma mark 微信精选列表查询
 
-- (void)wxarticleListQueryCall
+- (void)wxArticleListQueryCall
 {
     [self waitLoading:YES];
     
-    [MobAPI sendRequest:[MOBAWxArticleRequest wxarticleListRequestByCID:@"1" page:5 size:20]
+    [MobAPI sendRequest:[MOBAWxArticleRequest wxArticleListRequestByCID:@"1" page:5 size:20]
                onResult:^(MOBAResponse *response) {
                    
                    [self resultWithResponse:response];
@@ -1115,6 +1227,8 @@
 #pragma mark 全球股指明细查询
 - (void)globalStockDetailQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAGlobalStockRequest globalStockDetailRequestByCode:@"b_HSI" countryName:@"中国" continetType:@"asia"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
@@ -1125,7 +1239,9 @@
 #pragma mark 用户注册
 - (void)userRigisterRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userRigisterRequestByUsername:@"mob_test" password:@"123456"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userRigisterRequestByUsername:@"mob_test" password:@"123456" email:@"jack@163.com"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1134,7 +1250,9 @@
 #pragma mark 用户登录
 - (void)userLoginRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userLoginRequestByUsername:@"mob_test" password:@"123456"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userLoginRequestByUsername:@"mob_test" password:@"123456"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                    
@@ -1146,11 +1264,11 @@
                        /**
                         *  获取登录之后的 token
                         */
-                       self.token = [dict objectForKey:@"token"];
+                       self.token = dict[@"result"][@"token"];
                        /**
                         *  获取登录之后的 uid
                         */
-                       self.uid = [dict objectForKey:@"uid"];
+                       self.uid = dict[@"result"][@"uid"];
                    }
                    
                }];
@@ -1159,7 +1277,9 @@
 #pragma mark 修改用户密码
 - (void)userPasswordChangeRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userPasswordChangeRequestByUsername:@"mob_test" oldPassword:@"654321" newPassword:@"123456"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userPasswordChangeRequestByUsername:@"mob_test" oldPassword:@"654321" newPassword:@"123456" mode:@"1"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1168,7 +1288,9 @@
 #pragma mark 用户资料插入/更新
 - (void)userProfilePutRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userProfilePutRequestByToken:self.token uid:self.uid item:@"bW9iaWxl" value:@"e21vYmlsZTE6IjE0NzgyODY3MjM4In0"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userProfilePutRequestByToken:self.token uid:self.uid item:@"bW9iaWxl" value:@"e21vYmlsZTE6IjE0NzgyODY3MjM4In0"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1177,7 +1299,9 @@
 #pragma mark 查询用户资料
 - (void)userProfileQueryRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userProfileQueryRequestByUid:self.uid item:@"bW9iaWxl"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userProfileQueryRequestByUid:self.uid item:@"bW9iaWxl"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1186,7 +1310,9 @@
 #pragma mark 删除用户资料项
 - (void)userProfileDeleteRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userProfileDeleteRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userProfileDeleteRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1195,7 +1321,9 @@
 #pragma mark 用户数据插入/更新
 - (void)userDataPutRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userDataPutRequestByToken:self.token uid:self.uid item:@"bW9iaWxl" value:@"e21vYmlsZTE6IjE0NzgyODY3MjM4In0"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userDataPutRequestByToken:self.token uid:self.uid item:@"bW9iaWxl" value:@"e21vYmlsZTE6IjE0NzgyODY3MjM4In0"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1204,7 +1332,9 @@
 #pragma mark 用户数据查询
 - (void)userDataQueryRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userDataQueryRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userDataQueryRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1213,7 +1343,21 @@
 #pragma mark 用户数据删除项
 - (void)userDataDeleteRequest
 {
-    [MobAPI sendRequest:[MOBAUserCenter userDataDeleteRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userDataDeleteRequestByToken:self.token uid:self.uid item:@"bW9iaWxl"]
+               onResult:^(MOBAResponse *response) {
+                   [self resultWithResponse:response];
+               }];
+    
+}
+
+
+- (void)userPasswordRetrieveQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAUserCenterRequest userPasswordRetrieveRequestByUsername:@"mob_test"]
                onResult:^(MOBAResponse *response) {
                    [self resultWithResponse:response];
                }];
@@ -1223,6 +1367,8 @@
 #pragma mark 现货白银数据查询
 - (void)silverSpotQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBASilverRequest silverSpotRequest] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1231,6 +1377,8 @@
 #pragma mark 期货白银数据
 - (void)silverShfutureQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBASilverRequest silverShfutureRequest] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1239,6 +1387,8 @@
 #pragma mark 国内交易所贵金属数据
 - (void)domesticMetalQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBADomesticMetalRequest domesticSpotRequestByExchange:@"3"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1247,6 +1397,8 @@
 #pragma mark 词库分词相关查询
 - (void)wordAnalyzerCategoryQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAIKTokenRequest wordAnalyzerCategoryRequest] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1254,6 +1406,8 @@
 
 - (void)wordAnalyzerQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAIKTokenRequest wordAnalyzerRequestByType:@"common" text:@"6L-Z5piv5LiA5q615LyY576O6ICM5pyJ5peL5b6L55qE5LmQ5puy"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1262,6 +1416,8 @@
 #pragma mark 火车票相关查询
 - (void)trainTicketsQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBATrainTicketsRequest trainTicketsQueryRequestByTrainno:@"G2"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1269,6 +1425,8 @@
 
 - (void)trainTicketsByStationQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBATrainTicketsRequest trainTicketsQueryRequestByStationStart:@"北京" toEnd:@"上海"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1277,6 +1435,8 @@
 #pragma mark 航班信息相关查询
 - (void)flightCityQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAFlightRequest flightCityRequest] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1284,6 +1444,8 @@
 
 - (void)flightNoQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAFlightRequest flightNoRequestByName:@"CZ8319"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
@@ -1291,10 +1453,104 @@
 
 - (void)flightLineQueryCall
 {
+    [self waitLoading:YES];
+    
     [MobAPI sendRequest:[MOBAFlightRequest flightLineRequestByStart:@"上海" end:@"长沙"] onResult:^(MOBAResponse *response) {
         [self resultWithResponse:response];
     }];
 }
 
+#pragma mark 驾考题库相关查询
+- (void)subjectOneListQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBATiKuRequest subjectOneListRequestByPage:1 size:10] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)subjectFourListQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBATiKuRequest subjectFourListRequestByPage:1 size:10] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)specialExamCategoryQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBATiKuRequest specialExamCategoryRequest] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)specialPracticeExamQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBATiKuRequest specialPracticeExamRequestByPage:1 size:10 cid:@"207"] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+#pragma mark 汽车信息相关查询
+- (void)carBrandQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBACarRequest carBrandRequest] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)carSeriesNameQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBACarRequest carSeriesNameRequestByName:@"奥迪Q5"] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)carSeriesDetailQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBACarRequest carSeriesDetailRequestByCid:@"1060133"] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+#pragma mark 足球5大联赛信息相关查询
+- (void)queryParamQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAFootballLeagueRequest footballLeagueQueryParamRequest] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)queryMatchInfoQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAFootballLeagueRequest queryMatchInfoByLeagueTypeCn:@"德甲" season:@"2013" round:@"3"] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
+
+- (void)queryTeamMatchInfoQueryCall
+{
+    [self waitLoading:YES];
+    
+    [MobAPI sendRequest:[MOBAFootballLeagueRequest queryTeamMatchInfoByleagueTypeCn:@"德甲" teamA:@"法兰克福" teamB:@"沃尔夫斯堡" season:@"2015" round:@"1"] onResult:^(MOBAResponse *response) {
+        [self resultWithResponse:response];
+    }];
+}
 
 @end

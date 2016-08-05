@@ -16,7 +16,7 @@
 /**
  *  查询天气
  *
- *  @param cityName 城市名称
+ *  @param cityName 城市名（url编码）。必填项，不允许为 nil
  *  @param provinceName 所属省份名称
  *
  *  @return 请求对象
@@ -27,8 +27,8 @@
 /**
  *  查询天气
  *
- *  @param city 城市名称
- *  @param province 所属省份名称
+ *  @param city 城市名（url编码）。必填项，不允许为 nil
+ *  @param province 当前城市的所属省份 如：北京-通州、江苏-通州（url编码）
  *
  *  @return 请求对象
  */
@@ -51,7 +51,7 @@
 /**
  *  根据ip地址查询天气
  *
- *  @param ip 网络ip地址
+ *  @param ip 网络ip地址。必填项，不允许为 nil
  *
  *  @return 请求对象
  */
@@ -60,12 +60,22 @@
 /**
  *  根据ip地址查询天气
  *
- *  @param ip 网络ip地址
+ *  @param ip 网络ip地址。必填项，不允许为 nil
+ *  @param province 当前城市的所属省份 如：北京-通州、江苏-通州（url编码）
  *
  *  @return 请求对象
  */
 + (MOBAWeatherRequest *) searchRequestByIP:(NSString *)ip province:(NSString *)province;
 
+/**
+ *  @author ShengQiangLiu
+ */
 
+/**
+ *  天气类型查询
+ *
+ *  @return 请求对象
+ */
++ (MOBAWeatherRequest *) weatherTypeRequest;
 
 @end

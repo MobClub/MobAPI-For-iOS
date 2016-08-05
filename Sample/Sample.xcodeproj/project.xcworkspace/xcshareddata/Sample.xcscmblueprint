@@ -16,7 +16,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Sample",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/output\/v1.0.5\/Sample\/Sample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/output\/v1.0.6\/Sample\/Sample.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.180.65",

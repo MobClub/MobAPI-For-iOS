@@ -63,10 +63,10 @@
 "MobApiErrorCode_520907" = "数据集合表数超过上限 !";
 "MobApiErrorCode_520908" = "key不是标准的base64编码 !";
 "MobApiErrorCode_520909" = "value不是标准的base64编码 !";
-"MobApiErrorCode_5209010" = "该数据表中数据已满，请更换表 !";
-"MobApiErrorCode_5209011" = "该用户无数据 !";
-"MobApiErrorCode_5209012" = "该用户无数据集合 !";
-"MobApiErrorCode_5209013" = "该数据不存在 !";
+"MobApiErrorCode_520910" = "该数据表中数据已满，请更换表 !";
+"MobApiErrorCode_520911" = "该用户无数据 !";
+"MobApiErrorCode_520912" = "该用户无数据集合 !";
+"MobApiErrorCode_520913" = "该数据不存在 !";
 
 /*万年历*/
 "MobApiErrorCode_521001" = "查询的日期格式错误,格式:yyyy-MM-dd !";
@@ -169,6 +169,13 @@
 "MobApiErrorCode_522814" = "用户数据值必须符合base64编码 !";
 "MobApiErrorCode_522815" = "用户数据项长度超过最大限制 !";
 "MobApiErrorCode_522816" = "用户数据项的值长度超过最大限制 !";
+"MobApiErrorCode_522817" = "email不允许为空 !";
+"MobApiErrorCode_522818" = "email不符合邮箱格式 !";
+"MobApiErrorCode_522819" = "用户名不存在 !";
+"MobApiErrorCode_522820" = "随机码错误 !";
+"MobApiErrorCode_522821" = "随机码已过期 !";
+"MobApiErrorCode_522822" = "模式数据不合法 !";
+"MobApiErrorCode_522823" = "此邮箱已存在 !";
 
 /*全球股指查询*/
 "MobApiErrorCode_522901" = "查询不到数据 !";
@@ -191,3 +198,20 @@
 "MobApiErrorCode_523202" = "出发站或到达站为空 !";
 "MobApiErrorCode_523203" = "车次不能为空 !";
 
+/*驾考题库查询*/
+"MobApiErrorCode_523301" = "查询不到数据 !";
+"MobApiErrorCode_523302" = "分类id不允许为空 !";
+
+/*汽车信息查询*/
+"MobApiErrorCode_523401" = "查询不到数据 !";
+"MobApiErrorCode_523402" = "车型id为空 !";
+"MobApiErrorCode_523403" = "品牌名称是空 !";
+"MobApiErrorCode_523404" = "查询不到品牌的车型信息 !";
+"MobApiErrorCode_523405" = "查询不到该汽车相关信息 !";
+
+/*足球5大联赛信息查询*/
+"MobApiErrorCode_523501" = "没有相关数据 !";
+"MobApiErrorCode_523502" = "联赛类型不能为空 !";
+"MobApiErrorCode_523503" = "赛季不能为空 !";
+"MobApiErrorCode_523504" = "联赛第几轮次不能为空 !";
+"MobApiErrorCode_523505" = "至少输入一个查询队伍名 !";

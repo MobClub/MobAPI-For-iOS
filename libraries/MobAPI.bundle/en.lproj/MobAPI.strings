@@ -169,6 +169,13 @@
 "MobApiErrorCode_522814" = "User data values must conform to the base64 code !";
 "MobApiErrorCode_522815" = "User data item length exceeds the maximum limit !";
 "MobApiErrorCode_522816" = "The value of the user data item exceeds the maximum limit !";
+"MobApiErrorCode_522817" = "Email is not allowed to empty !";
+"MobApiErrorCode_522818" = "Email does not conform to the mailbox format !";
+"MobApiErrorCode_522819" = "Username does not exist !";
+"MobApiErrorCode_522820" = "Random code error !";
+"MobApiErrorCode_522821" = "Random code has expired !";
+"MobApiErrorCode_522822" = "Mode data is not valid !";
+"MobApiErrorCode_522823" = "This email already exists !";
 
 /*全球股指查询*/
 "MobApiErrorCode_522901" = "Can not find the relevant data !";
@@ -190,3 +197,21 @@
 "MobApiErrorCode_523201" = "Can not find the relevant data !";
 "MobApiErrorCode_523202" = "Departure station or the arrival station is empty !";
 "MobApiErrorCode_523203" = "Trips can not be empty !";
+
+/*驾考题库查询*/
+"MobApiErrorCode_523301" = "Can not find the data !";
+"MobApiErrorCode_523302" = "cid not allow empty !";
+
+/*汽车信息查询*/
+"MobApiErrorCode_523401" = "Can not find the data !";
+"MobApiErrorCode_523402" = "Car id is empty !";
+"MobApiErrorCode_523403" = "Brand name is empty !";
+"MobApiErrorCode_523404" = "Query less than the brand model information !";
+"MobApiErrorCode_523405" = "Query less than the car related information !";
+
+/*足球5大联赛信息查询*/
+"MobApiErrorCode_523501" = "Can not find the data !";
+"MobApiErrorCode_523502" = "League type can not be empty !";
+"MobApiErrorCode_523503" = "Season can not be empty !";
+"MobApiErrorCode_523504" = "The first few rounds of League cannot be empty !";
+"MobApiErrorCode_523505" = "Enter at least one query team name !";

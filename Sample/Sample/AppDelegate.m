@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //替换您自己在Mob官网注册的App Key.注册地址[注册您要使用的sdk的app key]：http://dashboard.mob.com/#/
-    [MobAPI registerApp:@"520520test"];
+    [MobAPI registerApp:@"14e2650055847"];
     
     return YES;
 }

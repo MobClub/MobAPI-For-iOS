@@ -36,12 +36,15 @@
 #import "MOBAGoldRequest.h"
 #import "MOBAExchangeRequest.h"
 #import "MOBAGlobalStockRequest.h"
-#import "MOBAUserCenter.h"
+#import "MOBAUserCenterRequest.h"
 #import "MOBASilverRequest.h"
 #import "MOBADomesticMetalRequest.h"
 #import "MOBAIKTokenRequest.h"
 #import "MOBATrainTicketsRequest.h"
 #import "MOBAFlightRequest.h"
+#import "MOBATiKuRequest.h"
+#import "MOBACarRequest.h"
+#import "MOBAFootballLeagueRequest.h"
 
 #import "MOBAResponse.h"
 
