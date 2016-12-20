@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBACalendarRequest *)calendarRequestWithDate:(NSString *)date;
++ (MOBACalendarRequest *) calendarRequestWithDate:(NSString *)date;
 
 @end

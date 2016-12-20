@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBADictionaryRequest *)dictionaryRequestWithName:(NSString *)name;
++ (MOBADictionaryRequest *) dictionaryRequestWithName:(NSString *)name;
 
 @end

@@ -18,6 +18,6 @@
  *
  *  @return 请求对象
  */
-+ (MOBAHoroScopeRequest *)horoScopeRequestWithDate:(NSString *)date hour:(NSString *)hour;
++ (MOBAHoroScopeRequest *) horoScopeRequestWithDate:(NSString *)date hour:(NSString *)hour;
 
 @end

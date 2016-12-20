@@ -20,7 +20,7 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAMarriageRequest *)marriageRequestWithManDate:(NSString *)manDate
++ (MOBAMarriageRequest *) marriageRequestWithManDate:(NSString *)manDate
                                             manHour:(NSString *)manHour
                                           womanDate:(NSString *)womanDate
                                           womanHour:(NSString *)womanHour;

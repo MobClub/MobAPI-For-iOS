@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBALaohuangliRequest *)laohuangliRequestWithDate:(NSString *)date;
++ (MOBALaohuangliRequest *) laohuangliRequestWithDate:(NSString *)date;
 
 @end

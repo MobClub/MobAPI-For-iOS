@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6BBD36AC1C33D8B50083AE10 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD36AB1C33D8B50083AE10 /* MOBFoundation.framework */; };
+		827837ED1E039DB000608082 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827837EC1E039DB000608082 /* MOBFoundation.framework */; };
+		827837EF1E039E4D00608082 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827837EE1E039E4D00608082 /* SystemConfiguration.framework */; };
+		827837F11E039EA100608082 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827837F01E039EA100608082 /* CoreTelephony.framework */; };
 		845B67611CE090E500A24FE4 /* MobAPI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845B675F1CE090E500A24FE4 /* MobAPI.bundle */; };
 		845B67631CE0CC1F00A24FE4 /* MobAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845B67621CE0CC1F00A24FE4 /* MobAPI.framework */; };
 		847BAD361D3614AA005F5E57 /* MobApiCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847BAD351D3614AA005F5E57 /* MobApiCategory.plist */; };
@@ -25,7 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6BBD36AB1C33D8B50083AE10 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		827837EC1E039DB000608082 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		827837EE1E039E4D00608082 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		827837F01E039EA100608082 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		845B675C1CE06C1300A24FE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		845B675D1CE06C1300A24FE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		845B675F1CE090E500A24FE4 /* MobAPI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobAPI.bundle; sourceTree = "<group>"; };
@@ -54,12 +58,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827837F11E039EA100608082 /* CoreTelephony.framework in Frameworks */,
+				827837EF1E039E4D00608082 /* SystemConfiguration.framework in Frameworks */,
 				845B67631CE0CC1F00A24FE4 /* MobAPI.framework in Frameworks */,
-				6BBD36AC1C33D8B50083AE10 /* MOBFoundation.framework in Frameworks */,
 				D0A811791BD5DEEB00BAA4CC /* JavaScriptCore.framework in Frameworks */,
 				D0A811771BD5DD3B00BAA4CC /* libstdc++.tbd in Frameworks */,
 				D0A811751BD5DD3500BAA4CC /* libz.tbd in Frameworks */,
 				D0A811731BD5DD3000BAA4CC /* libicucore.tbd in Frameworks */,
+				827837ED1E039DB000608082 /* MOBFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,8 @@
 				D0A811761BD5DD3B00BAA4CC /* libstdc++.tbd */,
 				D0A811741BD5DD3500BAA4CC /* libz.tbd */,
 				D0A811721BD5DD3000BAA4CC /* libicucore.tbd */,
+				827837F01E039EA100608082 /* CoreTelephony.framework */,
+				827837EE1E039E4D00608082 /* SystemConfiguration.framework */,
 				D0A811551BD5D4C700BAA4CC /* Sample */,
 				D0A811541BD5D4C700BAA4CC /* Products */,
 			);
@@ -117,9 +125,9 @@
 		D0B97D631BE07A0000AAE0CA /* libraries */ = {
 			isa = PBXGroup;
 			children = (
+				827837EC1E039DB000608082 /* MOBFoundation.framework */,
 				845B67621CE0CC1F00A24FE4 /* MobAPI.framework */,
 				845B675F1CE090E500A24FE4 /* MobAPI.bundle */,
-				6BBD36AB1C33D8B50083AE10 /* MOBFoundation.framework */,
 			);
 			name = libraries;
 			path = ../libraries;
@@ -156,6 +164,7 @@
 				TargetAttributes = {
 					D0A811521BD5D4C700BAA4CC = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = LW5266U92D;
 					};
 				};
 			};
@@ -320,6 +329,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				DEVELOPMENT_TEAM = Q87QUX3533;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../libraries",
@@ -329,7 +339,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mob.product.MobAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4f1240ae-90c9-4f0e-8dfa-cea4de3df319";
+				PROVISIONING_PROFILE_SPECIFIER = MobProvisioningProfiles;
 			};
 			name = Debug;
 		};
@@ -337,8 +348,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou ZhangTao Network Technology Co., Ltd.";
+				DEVELOPMENT_TEAM = LW5266U92D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../libraries",
@@ -348,7 +360,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mob.product.MobAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c7f792de-bde2-4a3a-b44f-417ae05cff70";
+				PROVISIONING_PROFILE_SPECIFIER = MobAPI;
 			};
 			name = Release;
 		};

@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAHistoryRequest *)historyRequestWithDay:(NSString *)day;
++ (MOBAHistoryRequest *) historyRequestWithDay:(NSString *)day;
 
 @end

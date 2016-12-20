@@ -17,6 +17,6 @@
  *
  *  @return 请求对象
  */
-+ (MOBAIdiomRequest *)idiomRequestWithName:(NSString *)name;
++ (MOBAIdiomRequest *) idiomRequestWithName:(NSString *)name;
 
 @end

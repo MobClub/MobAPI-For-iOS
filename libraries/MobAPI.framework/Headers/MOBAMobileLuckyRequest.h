@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAMobileLuckyRequest *)mobileLuckyRequestByMobile:(NSString *)mobile;
++ (MOBAMobileLuckyRequest *) mobileLuckyRequestByMobile:(NSString *)mobile;
 
 @end

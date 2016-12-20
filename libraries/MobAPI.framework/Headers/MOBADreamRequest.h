@@ -19,7 +19,7 @@
  *
  *  @return 请求的对象
  */
-+ (MOBADreamRequest *)dreamRequestWithKeyword:(NSString *)name
++ (MOBADreamRequest *) dreamRequestWithKeyword:(NSString *)name
                                          page:(NSString *)page
                                          size:(NSString *)size;
 

@@ -19,7 +19,7 @@
  *
  *  @return 请求的对象
  */
-+ (MOBAHealthRequest *)healthRequestWithKeyword:(NSString *)name
++ (MOBAHealthRequest *) healthRequestWithKeyword:(NSString *)name
                                            page:(NSString *)page
                                            size:(NSString *)size;
 

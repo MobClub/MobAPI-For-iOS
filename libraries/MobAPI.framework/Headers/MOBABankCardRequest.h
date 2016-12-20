@@ -17,6 +17,6 @@
  *
  *  @return 请求的对象
  */
-+ (MOBABankCardRequest *)bankCardRequestWithCard:(NSString *)card;
++ (MOBABankCardRequest *) bankCardRequestWithCard:(NSString *)card;
 
 @end
