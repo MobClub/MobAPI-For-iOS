@@ -10,6 +10,7 @@ s.platform            = :ios, '6.0'
 s.vendored_frameworks = 'libraries/MobAPI.framework'
 s.resources           = 'libraries/MobAPI.bundle'
 
+# 依赖 Mob 公共库
 s.dependency 'MOBFoundation'
 
 end
