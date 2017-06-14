@@ -9,6 +9,6 @@ s.source              = { :git => "https://github.com/MobClub/MobAPI-For-iOS.git
 s.platform            = :ios, '7.0'
 s.libraries           = "z", "stdc++"
 s.vendored_frameworks = 'MobProducts/SDK/MobAPI/MobAPI.framework'
-s.resources           = 'MobProducts/Sample/MobAPIDemo/Sources/MobAPI.bundle'
+s.resources           = 'MobProducts/Sample/MobAPIDemo/Sample/Sources/MobAPI.bundle'
 s.dependency 'MOBFoundation'
 end
