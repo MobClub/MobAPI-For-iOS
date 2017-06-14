@@ -1,16 +1,14 @@
 Pod::Spec.new do |s|
-s.name                = "MobAPI-For-iOS"
-s.version             = "1.0.7"
+s.name                = "mobAPI"
+s.version             = "2.0.0"
 s.summary             = 'mob.com MobAPI SDK'
 s.license             = 'MIT'
-s.author              = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
+s.author              = { "qc123456" => "vhbvbqc@gmail.com" }
 s.homepage            = 'http://www.mob.com'
 s.source              = { :git => "https://github.com/MobClub/MobAPI-For-iOS.git", :tag => s.version.to_s }
-s.platform            = :ios, '6.0'
-s.vendored_frameworks = 'libraries/MobAPI.framework'
-s.resources           = 'libraries/MobAPI.bundle'
-
-# 依赖 Mob 公共库
+s.platform            = :ios, '7.0'
+s.libraries           = "z", "stdc++"
+s.vendored_frameworks = 'MobProducts/SDK/MobAPI/MobAPI.framework'
+s.resources           = 'MobProducts/Sample/MobAPIDemo/Sources/MobAPI.bundle'
 s.dependency 'MOBFoundation'
-
 end
