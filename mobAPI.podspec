@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name                = "mobAPI"
-s.version             = "2.0.0"
+s.version             = "2.0.1"
 s.summary             = 'mob.com MobAPI SDK'
 s.license             = 'MIT'
 s.author              = { "qc123456" => "vhbvbqc@gmail.com" }
