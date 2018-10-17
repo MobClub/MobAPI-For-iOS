@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name                = "mobAPI"
+s.name                = 'mobAPI'
 s.version             = "2.1.1"
 s.summary             = 'mob.com MobAPI SDK'
 s.license             = 'MIT'
