@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
 	s.source              = { :git => "https://github.com/MobClub/MobAPI-For-iOS.git", :tag => s.version.to_s }
 	s.platform            = :ios
 	s.ios.deployment_target = "8.0"
-	s.default_subspecs      = 'MobAPI'
 	s.dependency 'MOBFoundation'
 	s.vendored_frameworks = 'SDK/MobAPI/MobAPI.framework'
 	s.resources           = 'SDK/MobAPI/MobAPI.bundle'

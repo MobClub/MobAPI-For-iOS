@@ -29,7 +29,7 @@
 ** 通过 CocoaPods进行安装，只需在 Podfile文件中添加：**
 
 ```
-pod 'MobAPI-For-iOS'
+pod 'mobAPI'
 ```
 ** 添加之后执行 pod install / pod update 命令即可。**
 
