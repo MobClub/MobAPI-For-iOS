@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 	s.platform            = :ios
 	s.ios.deployment_target = "8.0"
 	s.dependency 'MOBFoundation'
-	s.vendored_frameworks = 'SDK/MobAPI/MobAPI.framework'
-	s.resources           = 'SDK/MobAPI/MobAPI.bundle'
+	s.vendored_frameworks = 'MobAPI/MobAPI.framework'
+	s.resources           = 'MobAPI/MobAPI.bundle'
 
 end
